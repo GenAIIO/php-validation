@@ -1,0 +1,30 @@
+{
+    "name": "genai/validation",
+    "version": "1.0.0",
+    "description": "Attribute-based validation compiled to a reflection-free validator. Put #[NotBlank]/#[Email]/#[Length]/#[Pattern]/#[Matches] on a #[Validate] form class; a build-time processor bakes the rules into Cache\\Validation. At runtime, validate a populated form object -> a field=>error map, no reflection. PHP 5.3-safe runtime.",
+    "type": "library",
+    "license": "MIT",
+    "repositories": [
+        { "type": "path", "url": "../php-attribute" },
+        { "type": "path", "url": "../php-container" },
+        { "type": "path", "url": "../php-di" }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "suggest": {
+        "genai/attribute": "PHP 8 build-time scanning of #[Validate] forms via GenAI\\Validation\\Processor\\ValidationProcessor.",
+        "genai/di": "Auto-wires the Validator bean (the bundle's #[Configuration])."
+    },
+    "extra": {
+        "genai": {
+            "processors": ["GenAI\\Validation\\Processor\\ValidationProcessor"],
+            "scan": ["GenAI\\Validation\\Bundle"]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "GenAI\\Validation\\": "src/"
+        }
+    }
+}
