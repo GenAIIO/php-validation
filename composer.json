@@ -3,11 +3,6 @@
     "description": "Attribute-based validation compiled to a reflection-free validator. Put #[NotBlank]/#[Email]/#[Length]/#[Pattern]/#[Matches] on a #[Validate] form class; a build-time processor bakes the rules into Cache\\Validation. At runtime, validate a populated form object -> a field=>error map, no reflection. PHP 5.3-safe runtime.",
     "type": "library",
     "license": "Apache-2.0",
-    "repositories": [
-        { "type": "path", "url": "../php-attribute" },
-        { "type": "path", "url": "../php-container" },
-        { "type": "path", "url": "../php-di" }
-    ],
     "require": {
         "php": ">=5.3.0"
     },
